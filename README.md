@@ -8,4 +8,10 @@ Code to illustrate the use of functional programming in python to make web scrap
 <p>We convert the json document to a Python object with the json.loads function of the Python json module We apply functional programming to extract the data and simulate the paging with several http calls until we extract all the data.</p> 
 
 <p>In reality it is not 100% functional programming because we use some variables for comfort and a better compression of the code, but it could be 100% functional. </p>
-To do the pagination we use the recursion calling the main function, scrap_danmurphys as many times as there are pages</p>
+
+<p>To do the pagination we use the recursion calling the main function, scrap_danmurphys as many times as there are pages</p>
+
+<p>To execute the function we call
+scrap_danmurphys (1, "") to get all the pages in an array</p>
+
+<p>In this example we generate a csv file from the array obtained also with functional programming</p>
