@@ -1,4 +1,4 @@
-# Web-scraping-using-python-functional-paradigm-
+
 Code to illustrate the use of functional programming in python to make web scraping in http calls that return json
 
 <p>This script works for Python 2 (or higher).</p>
