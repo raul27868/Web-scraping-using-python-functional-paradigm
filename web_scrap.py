@@ -50,7 +50,7 @@ def scrap_danmurphys(page_from , page_to):
         return json_data
     else:
         # Recursion: call this function again if there are pages for scrap
-        return scrap_danmurphys(page_from+1,page_to) + json_data
+        return json_data + scrap_danmurphys(page_from+1,page_to) 
 
 
 
