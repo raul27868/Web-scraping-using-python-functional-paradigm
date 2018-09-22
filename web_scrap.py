@@ -1,27 +1,28 @@
-#Web Scrap con Recursividad en las llamadas http para simular la paginación
-import json      #Libreria para tratar valores json: parsed_json = json.loads(json_string)
-import requests  #Libreria para las peticiones http
-import requests  #Libreria para las peticiones http
-import shutil    #Libreria para Operaciones de archivos de alto nivel
-import re        #Libreria para Expresiones regulares
-import io        #Libreria para escribir ficheros
+#Web Scrap https://www.danmurphys.com.au/red-wine/rose
 
-#Establece los campos que queremos obtener
-CAMPOS = ["webdescriptionshort" , "countryoforigin", "webbrandname", "liquorstyle", "webregionoforigin", "vintage"]
+import json       # for manage json values: parsed_json = json.loads (json_string)
+import requests   # for http requests
+import requests   # for http requests
+import shutil     # for High Level File Operations
+import re         # for Regular Expressions
+import io         # for write files
 
-#Establece las cabeceras para la llamada http 
+#Set the fields that we want to scrape
+FIELDS = ["webdescriptionshort" , "countryoforigin", "webbrandname", "liquorstyle", "webregionoforigin", "vintage"]
+
+#Set the headers for the http call
 headers = { 'user-agent': 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/66.0.3359.139 Chrome/66.0.3359.139 Safari/537.36', 
             'content-type': 'application/json'}
 
-#Define los parametros de la llamada http a la url https://api.danmurphys.com.au/apis/ui/Browse
+#Set the parameters of the http call to the url: https://api.danmurphys.com.au/apis/ui/Browse
 data = {'pageNumber': 1,'sortType':'Relevance','pageSize': 20,'subDepartment':'rose','filters': [],'department':'red wine','Location':'ListerFacet'}
 
 
 
 def f(n):
-        #Devuel el nombre unido a un array con los otros datos de la extructuda["Products"][0]["AdditionalDetails"])[0]["Value"]
+        #Devuelve el nombre unido a un array con los otros datos de la extructura : ["Products"][0]["AdditionalDetails"])[0]["Value"]
         #   con re.sub(r'^\s+' eliminamos con Exppresion Regular los espacios al priciopio
-        return [n["Name"]] + map(  lambda x : re.sub(r'^\s+', "",extract(x,n) ),CAMPOS)
+        return [n["Name"]] + map(  lambda x : re.sub(r'^\s+', "",extract(x,n) ),FIELDS)
  
     
 def extract(r,n):
