@@ -12,6 +12,6 @@ Code to illustrate the use of functional programming in python to make web scrap
 <p>To do the pagination we use the recursion calling the main function, scrap_danmurphys as many times as there are pages</p>
 
 <p>To execute the function we call
-scrap_danmurphys (1, "") to get all the pages in an array</p>
+<b>scrap_danmurphys (1, "")</b> to get all the pages in an array</p>
 
 <p>In this example we generate a csv file from the array obtained also with functional programming</p>
